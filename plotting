@@ -1,0 +1,4 @@
+plt.scatter(x, y, color = 'blue')
+plt.xlabel('returns')
+plt.ylabel('volatility')
+plt.title('random portfolios')
