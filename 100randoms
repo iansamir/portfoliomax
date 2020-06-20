@@ -1,0 +1,32 @@
+randoms = []
+for j in range(100):
+
+  weights = [0, 0, 0, 0, 0]
+  sum = 0
+
+  for i in range(5):
+    weights[i] = random.random()
+    sum = sum + weights[i]
+
+  for i in range(5):
+    weights[i] = weights[i]/sum
+
+  randoms.append(weights)
+
+randoms[0]
+
+x = []
+y = []
+
+for k in range(100):
+  a = 0
+  b = 0
+  for i in range(5):
+    a = returns[i] * randoms[k][i]
+    b = np.power(std[i], 2) * randoms[k][i]
+  x.append(a)
+  b = np.sqrt(b)
+  y.append(b)
+
+x
+y
