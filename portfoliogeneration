@@ -1,0 +1,18 @@
+portfolior = 0
+portfolios = 0
+
+returns = []
+std = []
+
+for col in annualized:
+  returns.append(annualized[col][0])
+  std.append(annualized[col][1]) 
+
+for i in range(5):
+  portfolior = returns[i] * weights[i]
+  portfolios = np.power(std[i], 2) * weights[i]
+
+portfolios = np.sqrt(portfolios)
+
+portfolio1 = [portfolior, portfolios]
+portfolio1
