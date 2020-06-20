@@ -1,0 +1,12 @@
+import random
+weights = [0, 0, 0, 0, 0]
+sum = 0
+
+for i in range(5):
+  weights[i] = random.random()
+  sum = sum + weights[i]
+
+for i in range(5):
+  weights[i] = weights[i]/sum
+
+weights
