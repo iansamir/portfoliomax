@@ -1,0 +1,15 @@
+!pip install quandl
+import quandl
+
+api_key = 'AK6Hx-TEBPSS2q4xafkY'
+
+quandl.ApiConfig.api_key = api_key
+stocks = ['TSLA', 'AAPL', 'GOOG', 'FB', 'GOLD']
+table = quandl.get_table('WIKI/PRICES', ticker = stocks, 
+                         qopts = {'columns': ['date', 'ticker', 'adj_close']},
+                         date = {'gte': '2016-1-1', 'lte':'2016-12-31'}, paginate = True)
+frame = table.set_index('date')
+df = frame.pivot(columns = 'ticker')
+
+df.columns = [col[1] for col in df.columns]
+df.head()
