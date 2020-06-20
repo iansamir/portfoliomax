@@ -1,0 +1,22 @@
+import numpy as np
+returns = {}
+
+for col in df:
+  returns[col] = (-df[col][0] + df[col][251])/(df[col][0])
+  returns[col] = np.power(1 + returns[col], 365/252) - 1
+
+returns
+
+stdev = {}
+
+for col in a:
+  stdev[col] = a[col][2] * np.sqrt(365/252)
+
+stdev
+
+annualized = {}
+
+for a in returns:
+  annualized[a] = [returns[a], stdev[a]]
+
+annualized
